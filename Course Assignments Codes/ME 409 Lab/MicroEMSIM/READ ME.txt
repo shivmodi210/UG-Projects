@@ -1,0 +1,22 @@
+This file gives detailed instructions for executing MicroEMSIM program.
+
+Note: All the input and output files can be read in Notepad or any text editor. 
+
+Step 1: Make sure the folder that contains 'MicroEMSIM.exe' also has following files
+'kphi.txt', 'micro.txt', 'serration.txt' and 'main.inp' (the main input file).
+main.inp contains machining parameters and its name can be changed to any arbitrary name (e.g. test1.inp)
+
+Step 2: Open 'command prompt' from the start menu. In Windows 7 or Windows 10, this can be done by typing 'cmd' in the search window inside start menu.
+
+Step 3: Navigate to the folder containing all the MicroEMSIM program files.  
+For example, suppose the folder containing all the 'MicroEMSIM' program files is named FolderC and it is located at 'F:\FolderA\FolderB\FolderC\'
+then, first type 'F:' (without quotes) and press enter (this changes the drive to F:\>)
+then, enter 'cd FolderA\FolderB\FolderC' to navigate to the 'FolderC'. Now you should see 'F:\FolderA\FolderB\FolderC>' in the command prompt
+
+Step 4: Execute the input file by entering command 'MicroEMSIM main' 
+Here main is the name of the input file. 
+
+Step: Make sure the outputs files with suffix 'main' have been generated in the same folder.
+
+
+

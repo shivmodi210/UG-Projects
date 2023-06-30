@@ -1,0 +1,28 @@
+exp_name: AE_mnist_rotated
+data:
+  training:
+    dataset: mnist
+    root: './dataset'
+    type: rotate
+    num_rotate: 100
+    rotate_range: 180
+    digit: 3
+    batch_size: 50
+model:
+  arch: ae
+  encoder:
+      arch: fc_image
+      l_hidden: [512, 512, 512, ]
+      activation: ['relu', 'relu', 'relu', ]
+      out_activation: 'linear'
+  decoder:
+      arch: fc_image
+      l_hidden: [512, 512, 512, ]
+      activation: ['relu', 'relu', 'relu', ]
+      out_activation: 'sigmoid'
+  x_dim: 784
+  z_dim: 1
+optimizer:
+  lr: 0.001
+training:
+  num_epochs: 1001
