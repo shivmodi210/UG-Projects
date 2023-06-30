@@ -1,0 +1,3860 @@
+﻿# encoding: utf-8
+# Release 16.1
+SetScriptVersion(Version="16.1.91")
+system1 = GetSystem(Name="FFF 2")
+system1.Delete()
+system2 = GetSystem(Name="FFF")
+system2.Delete()
+system3 = GetSystem(Name="FFF 1")
+system3.Delete()
+system4 = GetSystem(Name="FFF 3")
+system4.DisplayText = "NACA 0012"
+results1 = system4.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:Pressure Contour, view=VIEW:View 1")
+results1.SendCommand(Command="""CONTOUR:Pressure Contour
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = symmetry 1
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 100
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0 [Pa],1 [Pa]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.106808, 0.206208, 0.0284997
+    Scale = 1.14284
+    Pan = -0.480021, 0.425109
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>hide /WIREFRAME:Wireframe, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /POLYLINE:airfoil outline upper, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /POLYLINE:airfoil outline, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Velocity Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Pressure Contour, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/STREAMLINE:Velocity Streamline, view=VIEW:View 1")
+results1.SendCommand(Command="""STREAMLINE:Velocity Streamline
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = farfield1
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 25
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /STREAMLINE:Velocity Streamline, view=/VIEW:View 1""")
+results1.SendCommand(Command="""STREAMLINE:Velocity Streamline
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = farfield1
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 1000
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Velocity Streamline
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = farfield1
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 3000
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Velocity Streamline
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = farfield1
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 5000
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.623156, -0.112085, 0.0255349
+    Scale = 1.08757
+    Pan = -0.134013, 0.141458
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+STREAMLINE:Velocity Streamline
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = farfield1
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 4000
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""STREAMLINE:Velocity Streamline
+Absolute Tolerance = 0.0 [m]
+Apply Instancing Transform = On
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Use Plot Variable
+Colour Scale = Linear
+Colour Variable = Velocity
+Colour Variable Boundary Values = Conservative
+Cross Periodics = On
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Faces = On
+Draw Lines = Off
+Draw Streams = On
+Draw Symbols = Off
+Grid Tolerance = 0.01
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Width = 1
+Location List = farfield1
+Locator Sampling Method = Equally Spaced
+Max = 0.0 [m s^-1]
+Maximum Number of Items = 25
+Min = 0.0 [m s^-1]
+Number of Samples = 5000
+Number of Sides = 8
+Range = Global
+Reduction Factor = 1.0
+Reduction or Max Number = Max Number
+Sample Spacing = 0.1
+Sampling Aspect Ratio = 1
+Sampling Grid Angle = 0 [degree]
+Seed Point Type = Equally Spaced Samples
+Simplify Geometry = Off
+Specular Lighting = On
+Stream Drawing Mode = Line
+Stream Initial Direction = 0 , 0 , 0 
+Stream Size = 1.0
+Stream Symbol = Ball
+Streamline Direction = Forward
+Streamline Maximum Periods = 20
+Streamline Maximum Segments = 10000
+Streamline Maximum Time = 0.0 [s]
+Streamline Type = 3D Streamline
+Streamline Width = 2
+Surface Drawing = Smooth Shading
+Surface Streamline Direction = Forward and Backward
+Symbol Size = 1.0
+Symbol Start Time = 10.0 [s]
+Symbol Stop Time = -10.0 [s]
+Symbol Time Interval = 1.0 [s]
+Tolerance Mode = Grid Relative
+Transparency = 0.0
+Variable = Velocity
+Variable Boundary Values = Conservative
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="> autolegend plot=/DEFAULT LEGEND:Default Legend View 1, view=VIEW:View 1")
+results1.SendCommand(Command="""DEFAULT LEGEND:Default Legend View 1
+Colour = 0, 0, 0
+Font = Sans Serif
+Legend Aspect = 0.07
+Legend Format = %3.0f
+Legend Orientation = Vertical
+Legend Position = 0.02 , 0.15 
+Legend Size = 0.6
+Legend Ticks = 5
+Legend Title = Legend
+Legend Title Mode = Variable and Location
+Legend X Justification = Left
+Legend Y Justification = Top
+Show Legend Units = On
+Text Colour Mode = Default
+Text Height = 0.024
+Text Rotation = 0
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.567708, -0.00723602, 0.0255584
+    Scale = 2.18964
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>hide /STREAMLINE:Velocity Streamline, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /STREAMLINE:Velocity Streamline, view=/VIEW:View 1""")
+results1.SendCommand(Command=">copy from=/POLYLINE:airfoil outline, to=/POLYLINE:airfoil outline lower")
+results1.SendCommand(Command="> show airfoil outline lower, view=/VIEW:View 1")
+results1.SendCommand(Command="> delete /POLYLINE:airfoil outline")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /POLYLINE:airfoil outline lower, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.567708, -0.00723602, 0.0255584
+    Scale = 1.18053
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+CHART:yplus distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = y+ Distribution
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Yplus
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = y+ upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = y+ upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = Y+ lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Y+ lower
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:yplus distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = y+ Distribution
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Yplus
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = y+ upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = y+ upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = Y+ lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Y+ lower
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.Exit()
+results1.Edit()
+results1.SendCommand(Command="""EXPORT:
+ Export File = Z:/Yechun's Work/Airfoil Tutorial/ANSYS Final/jklat oipeihaotp ehitoah pot.csv
+ Export Chart Name = yplus distribution
+ Overwrite = On
+END
+>export chart""")
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.567708, -0.00723602, 0.0255584
+    Scale = 0.860419
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = Off
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA Data
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA Data
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 4,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 4
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = Series 4
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 4
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END
+> delete /CHART:Pressure Coefficient Distribution/CHART SERIES:Series 3/CHART LINE:Chart Line 3,/CHART:Pressure Coefficient Distribution/CHART SERIES:Series 3""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END
+> delete /CHART:Pressure Coefficient Distribution/CHART SERIES:Series 4/CHART LINE:Chart Line 3,/CHART:Pressure Coefficient Distribution/CHART SERIES:Series 4""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 3,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 3
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = Series 3
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 3
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 4,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 4
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = Series 4
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = Series 4
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END
+> delete /CHART:Pressure Coefficient Distribution/CHART SERIES:Series 3/CHART LINE:Chart Line 3,/CHART:Pressure Coefficient Distribution/CHART SERIES:Series 3""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 4,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 4
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 4,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 4
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = On
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.SendCommand(Command="""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 4,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Title
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT Full Input Range = On
+FFT Max = 0.0
+FFT Min = 0.0
+FFT Subtract Mean = Off
+FFT Window Type = Hanning
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 4
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:/Yechun's Work/Airfoil Tutorial/Submission to Bhaskaran/NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = Off
+    Chart Line Colour = 0, 0, 0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.Exit()
+geometry1 = system4.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+mesh1 = system4.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+mesh1.Exit()
+solution1 = system4.GetContainer(ComponentName="Solution")
+solution1.Edit()
+setup1 = system4.GetContainer(ComponentName="Setup")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list ))(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|General"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Models"))(%cx-warning-dialog "OK to close Fluent?" #f)(cx-gui-do cx-activate-item "Warning*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+results1.Edit()
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:Pressure Contour, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/STREAMLINE:Velocity Streamline, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/POLYLINE:airfoil outline lower, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/POLYLINE:airfoil outline upper, view=VIEW:View 1")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /STREAMLINE:Velocity Streamline, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/DEFAULT LEGEND:Default Legend View 1, view=VIEW:View 1")
+results1.SendCommand(Command=r"""CHART:Pressure Coefficient Distribution
+Chart Axes Font = Tahoma, 10, False, False, False, False
+Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+Chart Grid Line Width = 1
+Chart Horizontal Grid = On
+Chart Legend = On
+Chart Legend Font = Tahoma, 8, False, False, False, False
+Chart Legend Inside = Outside Chart
+Chart Legend Justification = Center
+Chart Legend Position = Bottom
+Chart Legend Width Height = 0.2 , 0.4 
+Chart Legend X Justification = Right
+Chart Legend XY Position = 0.73 , 0.275 
+Chart Legend Y Justification = Center
+Chart Line Width = 2
+Chart Lines Order = Series 1,Chart Line 1,Series 2,Chart Line 2,Series 4,Chart Line 3
+Chart Minor Grid = Off
+Chart Minor Grid Line Width = 1
+Chart Symbol Size = 4
+Chart Title = Pressure Coefficient Distribution
+Chart Title Font = Tahoma, 12, True, False, False, False
+Chart Title Visibility = On
+Chart Type = XY
+Chart Vertical Grid = On
+Chart X Axis Automatic Number Formatting = On
+Chart X Axis Label = X Axis <units>
+Chart X Axis Number Format = %10.3e
+Chart Y Axis Automatic Number Formatting = On
+Chart Y Axis Label = Y Axis <units>
+Chart Y Axis Number Format = %10.3e
+Default Chart X Variable = X
+Default Chart Y Variable = Pressure Coefficient
+Default Histogram Y Axis Weighting = None
+Default Time Chart Variable = Pressure
+Default Time Chart X Expression = Time
+Default Time Variable Absolute Value = Off
+Default Time Variable Boundary Values = Conservative
+Default X Variable Absolute Value = Off
+Default X Variable Boundary Values = Conservative
+Default Y Variable Absolute Value = Off
+Default Y Variable Boundary Values = Conservative
+FFT X Function = Frequency
+FFT Y Function = Power Spectral Density
+Histogram Automatic Divisions = Automatic
+Histogram Divisions = -1.0,1.0
+Histogram Divisions Count = 10
+Histogram Y Axis Value = Count
+Is FFT Chart = Off
+Max X = 1.0
+Max Y = 1.0
+Min X = -1.0
+Min Y = -1.0
+Time Chart Keep Single Case = Off
+Use Data For X Axis Labels = On
+Use Data For Y Axis Labels = On
+X Axis Automatic Range = On
+X Axis Inverted = Off
+X Axis Logarithmic Scaling = Off
+Y Axis Automatic Range = On
+Y Axis Inverted = On
+Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+  Chart Line Custom Data Selection = Off
+  Chart Line Filename =  
+  Chart Series Type = Regular
+  Chart X Variable = Chart Count
+  Chart Y Variable = Density
+  Histogram Y Axis Weighting = None
+  Location = /POLYLINE:airfoil outline upper
+  Series Name = PC Upper
+  Time Chart Expression = Time
+  Time Chart Type = Point
+  Time Chart Variable = Density
+  Time Chart X Expression = Time
+  Time Variable Absolute Value = Off
+  Time Variable Boundary Values = Conservative
+  X Variable Absolute Value = Off
+  X Variable Boundary Values = Conservative
+  Y Variable Absolute Value = Off
+  Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Upper
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename =  
+      Chart Series Type = Regular
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Location = /POLYLINE:airfoil outline lower
+      Series Name = PC Lower
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 2
+    Auto Chart Line Colour = On
+    Case Name = 
+    Chart Line Colour = 1.0, 0.0, 0.0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = PC Lower
+    Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 4
+      Chart Line Custom Data Selection = Off
+      Chart Line Filename = Z:\Yechun's Work\Airfoil Tutorial\Submission to Bhaskaran\NASA Pressure Coefficient.csv
+      Chart Series Type = From File
+      Chart X Variable = Chart Count
+      Chart Y Variable = Density
+      Histogram Y Axis Weighting = None
+      Series Name = NASA
+      Time Chart Expression = Time
+      Time Chart Type = Point
+      Time Chart Variable = Density
+      Time Chart X Expression = Time
+      Time Variable Absolute Value = Off
+      Time Variable Boundary Values = Conservative
+      X Variable Absolute Value = Off
+      X Variable Boundary Values = Conservative
+      Y Variable Absolute Value = Off
+      Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+    Auto Chart Line Colour = Off
+    Case Name = 
+    Chart Line Colour = 0, 0, 0
+    Chart Line Style = Automatic
+    Chart Line Visibility = On
+    Chart Symbol Colour = 0.0, 1.0, 0.0
+    Chart Symbol Style = None
+    Fill Area = On
+    Fill Area Options = Automatic
+    Is Valid = True
+    Line Name = NASA
+    Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+      Report Caption = 
+  END
+END""")
+results1.Exit()
+Save(Overwrite=True)

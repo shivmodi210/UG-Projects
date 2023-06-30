@@ -1,0 +1,190 @@
+/batch
+/config,noeldb,1     ! force off writing results to database
+*get,_wallstrt,active,,time,wall
+! ANSYS input file written by Workbench version 2021 R1
+! File used for geometry attach: C:\Users\Shiv\Documents\ANSYS\1D_Conduction_HW_files\dp0\SYS\DM\SYS.scdoc
+/title,1D_Conduction_HW--Steady-State Thermal (A5)
+! ****** Begin Custom Load Command Snippet ******
+/COM, ACT Extensions:
+/COM,     LSDYNA, 2021.1
+/COM,     5f463412-bd3e-484b-87e7-cbc0a665e474, wbex
+/COM,
+! ****** End   Custom Load Command Snippet ******
+*DIM,_wb_ProjectScratch_dir,string,248
+_wb_ProjectScratch_dir(1) = 'C:\Users\Shiv\Documents\ANSYS\_ProjectScratch\Scr4AB5\'
+*DIM,_wb_SolverFiles_dir,string,248
+_wb_SolverFiles_dir(1) = 'C:\Users\Shiv\Documents\ANSYS\1D_Conduction_HW_files\dp0\SYS\MECH\'
+*DIM,_wb_userfiles_dir,string,248
+_wb_userfiles_dir(1) = 'C:\Users\Shiv\Documents\ANSYS\1D_Conduction_HW_files\user_files\'
+/com,--- Data in consistent BIN units. See Solving Units in the help system for more information.
+/units,BIN
+/nopr
+/wb,file,start              !  signify a WB generated input file
+/prep7
+! Turn off shape checking because checks already performed inside WB mesher.
+! See help system for more information.
+SHPP,OFF,,NOWARN
+/nolist
+etcon,set             ! allow ANSYS to choose best KEYOP's for 180x elements, resets any applicable keyopt to MAPDL defaults
+/com,*********** Nodes for the whole assembly ***********
+nblock,3,,15
+(1i9,3e20.9e3)
+        1     0.000000000E+00     3.937007874E+01     0.000000000E+00
+        2     0.000000000E+00     0.000000000E+00     0.000000000E+00
+        3     1.181102362E+02     0.000000000E+00     0.000000000E+00
+        4     1.181102362E+02     3.937007874E+01     0.000000000E+00
+        5     9.842519685E+01     3.937007874E+01     0.000000000E+00
+        6     7.874015748E+01     3.937007874E+01     0.000000000E+00
+        7     5.905511811E+01     3.937007874E+01     0.000000000E+00
+        8     3.937007874E+01     3.937007874E+01     0.000000000E+00
+        9     1.968503937E+01     3.937007874E+01     0.000000000E+00
+       10     1.968503937E+01     0.000000000E+00     0.000000000E+00
+       11     3.937007874E+01     0.000000000E+00     0.000000000E+00
+       12     5.905511811E+01     0.000000000E+00     0.000000000E+00
+       13     7.874015748E+01     0.000000000E+00     0.000000000E+00
+       14     9.842519685E+01     0.000000000E+00     0.000000000E+00
+-1
+/wb,elem,start            !  set before creation of elements
+/com,*********** Elements for Body 1 "SYS\Surface" ***********
+et,1,292
+keyo,1,3,3
+eblock,19,solid,,6
+(19i9)
+        1        1        1        1        0        0        0        0        4        0        1        4        5       14        3
+        1        1        1        1        0        0        0        0        4        0        2        5        6       13       14
+        1        1        1        1        0        0        0        0        4        0        3        6        7       12       13
+        1        1        1        1        0        0        0        0        4        0        4        7        8       11       12
+        1        1        1        1        0        0        0        0        4        0        5        8        9       10       11
+        1        1        1        1        0        0        0        0        4        0        6        9        1        2       10
+-1
+!Material Id = {C00E6907-96AF-41B6-B82E-05DA8B3783E0}
+/wb,elem,end               !  done creating elements
+/com,*********** Send User Defined Coordinate System(s) ***********
+csys,0
+toffst,459.67,  ! Temperature offset from absolute zero
+/wb,mat,start              !  starting to send materials
+/com,*********** Send Materials ***********
+MP,KXX,1,0.124893857263761,	! slinch in s^-3 F^-1
+
+/wb,mat,end                !  done sending materials
+/com,*********** Send Sheet Properties ***********
+r,1,39.3700787401575
+
+!************************* Model Summary ********************
+!SYS\Surface,	Go Big Red,	matid,	1
+!************************* End Model Summary ********************
+! get the diagonal of the bounding box. Needed later for other things
+*get,_xmin,node,,mnloc,x
+*get,_ymin,node,,mnloc,y
+*get,_zmin,node,,mnloc,z
+*get,_xmax,node,,mxloc,x
+*get,_ymax,node,,mxloc,y
+*get,_zmax,node,,mxloc,z
+_ASMDIAG=(_xmax-_xmin)*(_xmax-_xmin)+(_ymax-_ymin)*(_ymax-_ymin)+(_zmax-_zmin)*(_zmax-_zmin)
+_ASMDIAG=SQRT(_ASMDIAG)
+/wb,contact,start          !  starting to send contact
+/wb,contact,end            !  done creating contacts
+/golist
+/wb,load,start             !  starting to send loads
+/com,*********** Define Temperature Constraint ***********
+CMBLOCK,_CM30   ,NODE,        2
+(8i10)
+         1         2
+/com,*********** Create "Heat Flux" ***********
+et,2,151
+keyop,2,3,10        ! get plane option and thickness from underlying element
+eblock,10,,,1
+(15i9)
+        7        2        2        2        0        4        3
+-1
+esel,s,type,,2
+keyop,2,8,1      ! include heat flux
+esel,all
+fcum,add                   ! add nodal forces up (needed in case have loads on the same edge,vertex)
+fcum                       ! reset default on fcum command since done sending WB F loads
+/com,*********** Create "Internal Heat Generation" ***********
+esel,none
+esel,a,type,,1
+cm,_CM34,elem
+esel,all
+/com,***************** Define Uniform Initial temperature ***************
+tunif,71.6
+/gst,on,on
+fini
+*get,_numnode,node,0,count
+*get,_numelem,elem,0,count
+*get, _MAXELEMNUM, elem, 0, NUM, MAX
+*get, _MAXNODENUM, node, 0, NUM, MAX
+*get, _MAXELEMTYPE, etyp, 0, NUM, MAX
+*get, _MAXREALCONST, real, 0, NUM, MAX
+/go
+/wb,load,end               !  done creating loads
+/com,--- Number of total nodes = %_numnode%
+/com,--- Number of contact elements = 1
+/com,--- Number of spring elements = 0
+/com,--- Number of bearing elements = 0
+/com,--- Number of solid elements = 6
+/com,--- Number of condensed parts = 0
+/com,--- Number of total elements = %_numelem%
+*get,_wallbsol,active,,time,wall
+/com,****************************************************************************
+/com,*************************    SOLUTION       ********************************
+/com,****************************************************************************
+/solu
+antype,0                   ! static analysis
+!eqsl,sparse               ! using sparse solver which is default so no eqsl command needed
+cntr,print,1               ! print out contact info and also make no initial contact an error
+rescontrol,,none                 ! Do not keep any restart files
+dmpoption,emat,no             ! Don't combine emat file for DANSYS
+dmpoption,esav,no             ! Don't combine esav file for DANSYS
+/com,****************************************************
+/com,******************* SOLVE FOR LS 1 OF 1 ****************
+d,_CM30,temp,32.
+esel,s,type,,2
+nsle
+sf,all,hflux,-2.85507357704957e-003
+nsel,all
+esel,all
+bfe,_CM34,hgen,,2.90075475428236e-004
+autots,on
+nsub,1,10,1
+time,1.
+outres,erase
+outres,all,none
+outres,nsol,all
+outres,rsol,all
+outres,eangl,all
+outres,veng,all
+outres,fflux,all
+outres,cont,all
+cnvtol,heat,,.001,,8.85074579034524e-006          ! Program Controlled. Set MINREF equivalent of 1e-6 Watts
+! *********** WB SOLVE COMMAND ***********
+! check interactive state
+*get,ANSINTER_,active,,int
+*if,ANSINTER_,ne,0,then
+/eof
+*endif
+solve
+/com *************** Write FE CONNECTORS ********* 
+CEWRITE,file,ce,,INTE
+/com,****************************************************
+/com,*************** FINISHED SOLVE FOR LS 1 *************
+*get,_wallasol,active,,time,wall
+/post1
+xmlo,ENCODING,ISO-8859-1
+xmlo,parm
+/xml,parm,xml
+fini
+/gopr
+*get,_walldone,active,,time,wall
+_preptime=(_wallbsol-_wallstrt)*3600
+_solvtime=(_wallasol-_wallbsol)*3600
+_posttime=(_walldone-_wallasol)*3600
+_totaltim=(_walldone-_wallstrt)*3600
+*get,_dlbratio,active,0,solu,dlbr
+*get,_combtime,active,0,solu,comb
+/com,--- Total number of nodes = %_numnode%
+/com,--- Total number of elements = %_numelem%
+/com,--- Element load balance ratio = %_dlbratio%
+/com,--- Time to combine distributed files = %_combtime%
+/wb,file,end               ! done with WB generated input

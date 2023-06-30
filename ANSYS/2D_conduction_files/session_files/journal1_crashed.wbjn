@@ -1,0 +1,18 @@
+# encoding: utf-8
+# 2021 R1
+SetScriptVersion(Version="21.1.216")
+template1 = GetTemplate(
+    TemplateName="Steady-State Thermal",
+    Solver="ANSYS")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometryProperties1 = geometry1.GetGeometryProperties()
+geometryProperties1.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry1.Edit(IsSpaceClaimGeometry=True)
+geometry1.Exit()
+Save(Overwrite=True)
+Archive(
+    FilePath=GetAbsoluteUserPathName("ANSYS/2D_conduction.wbpz"),
+    IncludeExternalImportedFiles=True)
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()

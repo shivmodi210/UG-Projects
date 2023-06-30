@@ -1,0 +1,10 @@
+reset;
+
+option solver cplex;
+
+model model1.mod;
+data model1.dat;
+
+solve;
+
+display decision;

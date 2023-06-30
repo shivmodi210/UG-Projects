@@ -1,0 +1,10 @@
+/COM,ANSYS RELEASE 2021 R1           BUILD 21.1      UP20201109       18:51:13
+
+ *** WARNING ***                         CP =       1.000   TIME= 18:51:24
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       1.062   TIME= 18:51:24
+ Material number 2 (used by element 2250) should normally have at least  
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          

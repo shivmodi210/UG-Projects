@@ -1,0 +1,332 @@
+/batch
+/config,noeldb,1     ! force off writing results to database
+*get,_wallstrt,active,,time,wall
+! ANSYS input file written by Workbench version 2021 R1
+! File used for geometry attach: C:\Users\Shiv\Documents\ANSYS\2D_conduction_files\dp0\SYS\DM\SYS.scdoc
+/title,2D_conduction--Steady-State Thermal (A5)
+! ****** Begin Custom Load Command Snippet ******
+/COM, ACT Extensions:
+/COM,     LSDYNA, 2021.1
+/COM,     5f463412-bd3e-484b-87e7-cbc0a665e474, wbex
+/COM,
+! ****** End   Custom Load Command Snippet ******
+*DIM,_wb_ProjectScratch_dir,string,248
+_wb_ProjectScratch_dir(1) = 'C:\Users\Shiv\Documents\ANSYS\_ProjectScratch\ScrF764\'
+*DIM,_wb_SolverFiles_dir,string,248
+_wb_SolverFiles_dir(1) = 'C:\Users\Shiv\Documents\ANSYS\2D_conduction_files\dp0\SYS\MECH\'
+*DIM,_wb_userfiles_dir,string,248
+_wb_userfiles_dir(1) = 'C:\Users\Shiv\Documents\ANSYS\2D_conduction_files\user_files\'
+/com,--- Data in consistent MKS units. See Solving Units in the help system for more information.
+/units,MKS
+/nopr
+/wb,file,start              !  signify a WB generated input file
+/prep7
+! Turn off shape checking because checks already performed inside WB mesher.
+! See help system for more information.
+SHPP,OFF,,NOWARN
+/nolist
+etcon,set             ! allow ANSYS to choose best KEYOP's for 180x elements, resets any applicable keyopt to MAPDL defaults
+/com,*********** Nodes for the whole assembly ***********
+nblock,3,,133
+(1i9,3e20.9e3)
+        1     0.000000000E+00     2.000000000E+00     0.000000000E+00
+        2     0.000000000E+00     0.000000000E+00     0.000000000E+00
+        3     1.000000000E+00     0.000000000E+00     0.000000000E+00
+        4     1.000000000E+00     2.000000000E+00     0.000000000E+00
+        5     7.500000000E-01     2.500000000E-01     0.000000000E+00
+        6     5.000000000E-01     2.500000000E-01     0.000000000E+00
+        7     2.500000000E-01     2.500000000E-01     0.000000000E+00
+        8     7.500000000E-01     5.000000000E-01     0.000000000E+00
+        9     5.000000000E-01     5.000000000E-01     0.000000000E+00
+       10     2.500000000E-01     5.000000000E-01     0.000000000E+00
+       11     7.500000000E-01     7.500000000E-01     0.000000000E+00
+       12     5.000000000E-01     7.500000000E-01     0.000000000E+00
+       13     2.500000000E-01     7.500000000E-01     0.000000000E+00
+       14     7.500000000E-01     1.000000000E+00     0.000000000E+00
+       15     5.000000000E-01     1.000000000E+00     0.000000000E+00
+       16     2.500000000E-01     1.000000000E+00     0.000000000E+00
+       17     7.500000000E-01     1.250000000E+00     0.000000000E+00
+       18     5.000000000E-01     1.250000000E+00     0.000000000E+00
+       19     2.500000000E-01     1.250000000E+00     0.000000000E+00
+       20     7.500000000E-01     1.500000000E+00     0.000000000E+00
+       21     5.000000000E-01     1.500000000E+00     0.000000000E+00
+       22     2.500000000E-01     1.500000000E+00     0.000000000E+00
+       23     7.500000000E-01     1.750000000E+00     0.000000000E+00
+       24     5.000000000E-01     1.750000000E+00     0.000000000E+00
+       25     2.500000000E-01     1.750000000E+00     0.000000000E+00
+       26     7.500000000E-01     2.000000000E+00     0.000000000E+00
+       27     5.000000000E-01     2.000000000E+00     0.000000000E+00
+       28     2.500000000E-01     2.000000000E+00     0.000000000E+00
+       29     1.000000000E+00     2.500000000E-01     0.000000000E+00
+       30     1.000000000E+00     5.000000000E-01     0.000000000E+00
+       31     1.000000000E+00     7.500000000E-01     0.000000000E+00
+       32     1.000000000E+00     1.000000000E+00     0.000000000E+00
+       33     1.000000000E+00     1.250000000E+00     0.000000000E+00
+       34     1.000000000E+00     1.500000000E+00     0.000000000E+00
+       35     1.000000000E+00     1.750000000E+00     0.000000000E+00
+       36     2.500000000E-01     0.000000000E+00     0.000000000E+00
+       37     5.000000000E-01     0.000000000E+00     0.000000000E+00
+       38     7.500000000E-01     0.000000000E+00     0.000000000E+00
+       39     0.000000000E+00     1.750000000E+00     0.000000000E+00
+       40     0.000000000E+00     1.500000000E+00     0.000000000E+00
+       41     0.000000000E+00     1.250000000E+00     0.000000000E+00
+       42     0.000000000E+00     1.000000000E+00     0.000000000E+00
+       43     0.000000000E+00     7.500000000E-01     0.000000000E+00
+       44     0.000000000E+00     5.000000000E-01     0.000000000E+00
+       45     0.000000000E+00     2.500000000E-01     0.000000000E+00
+       46     1.250000000E-01     2.000000000E+00     0.000000000E+00
+       47     0.000000000E+00     1.875000000E+00     0.000000000E+00
+       48     1.250000000E-01     0.000000000E+00     0.000000000E+00
+       49     0.000000000E+00     1.250000000E-01     0.000000000E+00
+       50     1.000000000E+00     1.250000000E-01     0.000000000E+00
+       51     8.750000000E-01     0.000000000E+00     0.000000000E+00
+       52     8.750000000E-01     2.000000000E+00     0.000000000E+00
+       53     1.000000000E+00     1.875000000E+00     0.000000000E+00
+       54     6.250000000E-01     2.500000000E-01     0.000000000E+00
+       55     7.500000000E-01     3.750000000E-01     0.000000000E+00
+       56     8.750000000E-01     2.500000000E-01     0.000000000E+00
+       57     7.500000000E-01     1.250000000E-01     0.000000000E+00
+       58     3.750000000E-01     2.500000000E-01     0.000000000E+00
+       59     5.000000000E-01     3.750000000E-01     0.000000000E+00
+       60     5.000000000E-01     1.250000000E-01     0.000000000E+00
+       61     2.500000000E-01     3.750000000E-01     0.000000000E+00
+       62     2.500000000E-01     1.250000000E-01     0.000000000E+00
+       63     1.250000000E-01     2.500000000E-01     0.000000000E+00
+       64     6.250000000E-01     5.000000000E-01     0.000000000E+00
+       65     7.500000000E-01     6.250000000E-01     0.000000000E+00
+       66     8.750000000E-01     5.000000000E-01     0.000000000E+00
+       67     3.750000000E-01     5.000000000E-01     0.000000000E+00
+       68     5.000000000E-01     6.250000000E-01     0.000000000E+00
+       69     2.500000000E-01     6.250000000E-01     0.000000000E+00
+       70     1.250000000E-01     5.000000000E-01     0.000000000E+00
+       71     6.250000000E-01     7.500000000E-01     0.000000000E+00
+       72     7.500000000E-01     8.750000000E-01     0.000000000E+00
+       73     8.750000000E-01     7.500000000E-01     0.000000000E+00
+       74     3.750000000E-01     7.500000000E-01     0.000000000E+00
+       75     5.000000000E-01     8.750000000E-01     0.000000000E+00
+       76     2.500000000E-01     8.750000000E-01     0.000000000E+00
+       77     1.250000000E-01     7.500000000E-01     0.000000000E+00
+       78     6.250000000E-01     1.000000000E+00     0.000000000E+00
+       79     7.500000000E-01     1.125000000E+00     0.000000000E+00
+       80     8.750000000E-01     1.000000000E+00     0.000000000E+00
+       81     3.750000000E-01     1.000000000E+00     0.000000000E+00
+       82     5.000000000E-01     1.125000000E+00     0.000000000E+00
+       83     2.500000000E-01     1.125000000E+00     0.000000000E+00
+       84     1.250000000E-01     1.000000000E+00     0.000000000E+00
+       85     6.250000000E-01     1.250000000E+00     0.000000000E+00
+       86     7.500000000E-01     1.375000000E+00     0.000000000E+00
+       87     8.750000000E-01     1.250000000E+00     0.000000000E+00
+       88     3.750000000E-01     1.250000000E+00     0.000000000E+00
+       89     5.000000000E-01     1.375000000E+00     0.000000000E+00
+       90     2.500000000E-01     1.375000000E+00     0.000000000E+00
+       91     1.250000000E-01     1.250000000E+00     0.000000000E+00
+       92     6.250000000E-01     1.500000000E+00     0.000000000E+00
+       93     7.500000000E-01     1.625000000E+00     0.000000000E+00
+       94     8.750000000E-01     1.500000000E+00     0.000000000E+00
+       95     3.750000000E-01     1.500000000E+00     0.000000000E+00
+       96     5.000000000E-01     1.625000000E+00     0.000000000E+00
+       97     2.500000000E-01     1.625000000E+00     0.000000000E+00
+       98     1.250000000E-01     1.500000000E+00     0.000000000E+00
+       99     6.250000000E-01     1.750000000E+00     0.000000000E+00
+      100     7.500000000E-01     1.875000000E+00     0.000000000E+00
+      101     8.750000000E-01     1.750000000E+00     0.000000000E+00
+      102     3.750000000E-01     1.750000000E+00     0.000000000E+00
+      103     5.000000000E-01     1.875000000E+00     0.000000000E+00
+      104     2.500000000E-01     1.875000000E+00     0.000000000E+00
+      105     1.250000000E-01     1.750000000E+00     0.000000000E+00
+      106     6.250000000E-01     2.000000000E+00     0.000000000E+00
+      107     3.750000000E-01     2.000000000E+00     0.000000000E+00
+      108     1.000000000E+00     3.750000000E-01     0.000000000E+00
+      109     1.000000000E+00     6.250000000E-01     0.000000000E+00
+      110     1.000000000E+00     8.750000000E-01     0.000000000E+00
+      111     1.000000000E+00     1.125000000E+00     0.000000000E+00
+      112     1.000000000E+00     1.375000000E+00     0.000000000E+00
+      113     1.000000000E+00     1.625000000E+00     0.000000000E+00
+      114     3.750000000E-01     0.000000000E+00     0.000000000E+00
+      115     6.250000000E-01     0.000000000E+00     0.000000000E+00
+      116     0.000000000E+00     1.625000000E+00     0.000000000E+00
+      117     0.000000000E+00     1.375000000E+00     0.000000000E+00
+      118     0.000000000E+00     1.125000000E+00     0.000000000E+00
+      119     0.000000000E+00     8.750000000E-01     0.000000000E+00
+      120     0.000000000E+00     6.250000000E-01     0.000000000E+00
+      121     0.000000000E+00     3.750000000E-01     0.000000000E+00
+-1
+/wb,elem,start            !  set before creation of elements
+/com,*********** Elements for Body 1 "SYS\Surface" ***********
+et,1,293
+keyo,1,3,3
+eblock,19,solid,,32
+(19i9)
+        1        1        1        1        0        0        0        0        8        0        1       29        5       38        3       56       57       51       50
+        1        1        1        1        0        0        0        0        8        0        2       30        8        5       29       66       55       56      108
+        1        1        1        1        0        0        0        0        8        0        3       31       11        8       30       73       65       66      109
+        1        1        1        1        0        0        0        0        8        0        4       32       14       11       31       80       72       73      110
+        1        1        1        1        0        0        0        0        8        0        5       33       17       14       32       87       79       80      111
+        1        1        1        1        0        0        0        0        8        0        6       34       20       17       33       94       86       87      112
+        1        1        1        1        0        0        0        0        8        0        7       35       23       20       34      101       93       94      113
+        1        1        1        1        0        0        0        0        8        0        8        4       26       23       35       52      100      101       53
+        1        1        1        1        0        0        0        0        8        0        9        5        6       37       38       54       60      115       57
+        1        1        1        1        0        0        0        0        8        0       10        8        9        6        5       64       59       54       55
+        1        1        1        1        0        0        0        0        8        0       11       11       12        9        8       71       68       64       65
+        1        1        1        1        0        0        0        0        8        0       12       14       15       12       11       78       75       71       72
+        1        1        1        1        0        0        0        0        8        0       13       17       18       15       14       85       82       78       79
+        1        1        1        1        0        0        0        0        8        0       14       20       21       18       17       92       89       85       86
+        1        1        1        1        0        0        0        0        8        0       15       23       24       21       20       99       96       92       93
+        1        1        1        1        0        0        0        0        8        0       16       26       27       24       23      106      103       99      100
+        1        1        1        1        0        0        0        0        8        0       17        6        7       36       37       58       62      114       60
+        1        1        1        1        0        0        0        0        8        0       18        9       10        7        6       67       61       58       59
+        1        1        1        1        0        0        0        0        8        0       19       12       13       10        9       74       69       67       68
+        1        1        1        1        0        0        0        0        8        0       20       15       16       13       12       81       76       74       75
+        1        1        1        1        0        0        0        0        8        0       21       18       19       16       15       88       83       81       82
+        1        1        1        1        0        0        0        0        8        0       22       21       22       19       18       95       90       88       89
+        1        1        1        1        0        0        0        0        8        0       23       24       25       22       21      102       97       95       96
+        1        1        1        1        0        0        0        0        8        0       24       27       28       25       24      107      104      102      103
+        1        1        1        1        0        0        0        0        8        0       25        7       45        2       36       63       49       48       62
+        1        1        1        1        0        0        0        0        8        0       26       10       44       45        7       70      121       63       61
+        1        1        1        1        0        0        0        0        8        0       27       13       43       44       10       77      120       70       69
+        1        1        1        1        0        0        0        0        8        0       28       16       42       43       13       84      119       77       76
+        1        1        1        1        0        0        0        0        8        0       29       19       41       42       16       91      118       84       83
+        1        1        1        1        0        0        0        0        8        0       30       22       40       41       19       98      117       91       90
+        1        1        1        1        0        0        0        0        8        0       31       25       39       40       22      105      116       98       97
+        1        1        1        1        0        0        0        0        8        0       32       28        1       39       25       46       47      105      104
+-1
+!Material Id = {98552B81-30F5-4B61-A788-8B424D92193B}
+/wb,elem,end               !  done creating elements
+/com,*********** Send User Defined Coordinate System(s) ***********
+csys,0
+toffst,273.15,  ! Temperature offset from absolute zero
+/wb,mat,start              !  starting to send materials
+/com,*********** Send Materials ***********
+MP,KXX,1,1,	! W m^-1 C^-1
+
+/wb,mat,end                !  done sending materials
+/com,*********** Send Sheet Properties ***********
+r,1,1.
+
+!************************* Model Summary ********************
+!SYS\Surface,	Go big red,	matid,	1
+!************************* End Model Summary ********************
+! get the diagonal of the bounding box. Needed later for other things
+*get,_xmin,node,,mnloc,x
+*get,_ymin,node,,mnloc,y
+*get,_zmin,node,,mnloc,z
+*get,_xmax,node,,mxloc,x
+*get,_ymax,node,,mxloc,y
+*get,_zmax,node,,mxloc,z
+_ASMDIAG=(_xmax-_xmin)*(_xmax-_xmin)+(_ymax-_ymin)*(_ymax-_ymin)+(_zmax-_zmin)*(_zmax-_zmin)
+_ASMDIAG=SQRT(_ASMDIAG)
+/wb,contact,start          !  starting to send contact
+/wb,contact,end            !  done creating contacts
+/golist
+/wb,load,start             !  starting to send loads
+/com,*********** Define Temperature Constraint ***********
+CMBLOCK,_CM46   ,NODE,        9
+(8i10)
+         2         3        36        37        38        48        51       114
+       115
+fcum,add                   ! add nodal forces up (needed in case have loads on the same edge,vertex)
+fcum                       ! reset default on fcum command since done sending WB F loads
+/com,*********** Create "Convection" ***********
+et,2,151
+keyop,2,3,10        ! get plane option and thickness from underlying element
+eblock,10,,,8
+(15i9)
+       33        2        2        2        0       29        3       50
+       34        2        2        2        0       30       29      108
+       35        2        2        2        0       31       30      109
+       36        2        2        2        0       32       31      110
+       37        2        2        2        0       33       32      111
+       38        2        2        2        0       34       33      112
+       39        2        2        2        0       35       34      113
+       40        2        2        2        0        4       35       53
+-1
+esel,s,type,,2
+keyop,2,8,2.
+keyop,2,13,0
+esel,all
+/com,***************** Define Uniform Initial temperature ***************
+tunif,22.
+/gst,on,on
+fini
+*get,_numnode,node,0,count
+*get,_numelem,elem,0,count
+*get, _MAXELEMNUM, elem, 0, NUM, MAX
+*get, _MAXNODENUM, node, 0, NUM, MAX
+*get, _MAXELEMTYPE, etyp, 0, NUM, MAX
+*get, _MAXREALCONST, real, 0, NUM, MAX
+/go
+/wb,load,end               !  done creating loads
+/com,--- Number of total nodes = %_numnode%
+/com,--- Number of contact elements = 8
+/com,--- Number of spring elements = 0
+/com,--- Number of bearing elements = 0
+/com,--- Number of solid elements = 32
+/com,--- Number of condensed parts = 0
+/com,--- Number of total elements = %_numelem%
+*get,_wallbsol,active,,time,wall
+/com,****************************************************************************
+/com,*************************    SOLUTION       ********************************
+/com,****************************************************************************
+/solu
+antype,0                   ! static analysis
+!eqsl,sparse               ! using sparse solver which is default so no eqsl command needed
+cntr,print,1               ! print out contact info and also make no initial contact an error
+rescontrol,,none                 ! Do not keep any restart files
+dmpoption,emat,no             ! Don't combine emat file for DANSYS
+dmpoption,esav,no             ! Don't combine esav file for DANSYS
+/com,****************************************************
+/com,******************* SOLVE FOR LS 1 OF 1 ****************
+d,_CM46,temp,1.
+esel,s,type,,2
+nsle
+sf,all,conv,5.,0.
+nsel,all
+esel,all
+autots,on
+nsub,1,10,1
+time,1.
+outres,erase
+outres,all,none
+outres,nsol,all
+outres,rsol,all
+outres,eangl,all
+outres,veng,all
+outres,fflux,all
+outres,cont,all
+/nopr
+esel,s,type,,2
+cm,_elmisc,elem
+esel,all
+/gopr
+outres,misc,all,_elmisc
+cnvtol,heat,,.001,,1.e-006    ! Program Controlled. Set MINREF equivalent of 1e-6 Watts
+! *********** WB SOLVE COMMAND ***********
+! check interactive state
+*get,ANSINTER_,active,,int
+*if,ANSINTER_,ne,0,then
+/eof
+*endif
+solve
+/com *************** Write FE CONNECTORS ********* 
+CEWRITE,file,ce,,INTE
+/com,****************************************************
+/com,*************** FINISHED SOLVE FOR LS 1 *************
+*get,_wallasol,active,,time,wall
+/post1
+xmlo,ENCODING,ISO-8859-1
+xmlo,parm
+/xml,parm,xml
+fini
+/gopr
+*get,_walldone,active,,time,wall
+_preptime=(_wallbsol-_wallstrt)*3600
+_solvtime=(_wallasol-_wallbsol)*3600
+_posttime=(_walldone-_wallasol)*3600
+_totaltim=(_walldone-_wallstrt)*3600
+*get,_dlbratio,active,0,solu,dlbr
+*get,_combtime,active,0,solu,comb
+/com,--- Total number of nodes = %_numnode%
+/com,--- Total number of elements = %_numelem%
+/com,--- Element load balance ratio = %_dlbratio%
+/com,--- Time to combine distributed files = %_combtime%
+/wb,file,end               ! done with WB generated input

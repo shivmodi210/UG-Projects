@@ -1,0 +1,21 @@
+/COM,ANSYS RELEASE 2021 R1           BUILD 21.1      UP20201109       22:20:55
+
+ *** WARNING ***                         CP =       1.672   TIME= 22:20:57
+ Temperature-dependent properties have not been specified.  The          
+ THOPT,QUASI option does not perform equilibrium iterations.  Small      
+ time steps may be required to obtain accurate results.                  
+
+ *** WARNING ***                         CP =       1.828   TIME= 22:20:57
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       1.953   TIME= 22:20:57
+ Material number 2 (used by element 20001) should normally have at least 
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
+
+ *** ERROR ***                           CP =       6.500   TIME= 22:21:02
+ The value of TEMP at node 2637 is 1308055.7.  It is greater than the    
+ current limit of 1000000 (which can be reset on the NCNV command).      
+ This generally indicates that there are no temperature constraints or   
+ convections applied.                                                    

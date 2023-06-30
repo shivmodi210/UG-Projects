@@ -1,0 +1,33 @@
+/COM,ANSYS RELEASE 2021 R1           BUILD 21.1      UP20201109       13:55:14
+
+ *** WARNING ***                         CP =       1.188   TIME= 13:55:15
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       1.250   TIME= 13:55:15
+ Material number 19 (used by element 10873) should normally have at      
+ least one MP or one TB type command associated with it.  Output of      
+ energy by material may not be available.                                
+
+ *** WARNING ***                         CP =       1.312   TIME= 13:55:15
+ Maximum friction coefficient 0.5 is defined in the model.  Switch to    
+ the unsymmetric solver (NROP,UNSYM) instead if convergence difficulty   
+ is encountered.                                                         
+
+ *** WARNING ***                         CP =       2.156   TIME= 13:55:16
+ Coefficient ratio exceeds 1.0e8 - Check results.                        
+
+ *** WARNING ***                         CP =      14.984   TIME= 13:55:29
+ Table _FIX is an ANSYS reserved table name.  It is used to constrain    
+ structural degrees of freedom to their current displaced status.  This  
+ table should not be used for other purposes.                            
+
+ *** WARNING ***                         CP =      14.984   TIME= 13:55:29
+ Material number 19 (used by element 10873) should normally have at      
+ least one MP or one TB type command associated with it.  Output of      
+ energy by material may not be available.                                
+
+ *** WARNING ***                         CP =      31.000   TIME= 13:55:45
+ Material number 19 (used by element 10873) should normally have at      
+ least one MP or one TB type command associated with it.  Output of      
+ energy by material may not be available.                                

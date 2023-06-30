@@ -1,0 +1,13 @@
+<SOLUTION>
+<HEADER>
+ <COLUMN ID="        1">Time</COLUMN>
+ <COLUMN ID="        2" NODE="        0" ITEM="TEMP" COMP="MAX ">MAX_TEMP                        </COLUMN>
+ <COLUMN ID="        3" NODE="        0" ITEM="TEMP" COMP="MIN ">MIN_TEMP                        </COLUMN>
+ <UNITS>MPA</UNITS>
+</HEADER>
+<COLDATA>
+   0.1000000E-01     93452.98         93452.98    
+   0.2000000E-01     186884.0         186884.0    
+   0.5000000E-01     467176.9         467176.9    
+</COLDATA>
+</SOLUTION>
