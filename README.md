@@ -1,3 +1,3 @@
 # UG-Projects
 
-Undergrad course projects and reports.
+Undergrad course projects, key projects and their reports.
