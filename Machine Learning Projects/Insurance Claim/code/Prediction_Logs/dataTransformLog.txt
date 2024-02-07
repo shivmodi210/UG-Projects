@@ -1,4 +1,0 @@
-2021-11-20/10:11:57		 fraudDetection_021119920_010222.csv: File Transformed successfully!!
-2021-11-20/10:16:22		 fraudDetection_021119920_010222.csv: File Transformed successfully!!
-2021-11-20/11:49:20		 fraudDetection_021119920_010222.csv: File Transformed successfully!!
-2021-11-20/11:49:27		 fraudDetection_021119920_010222.csv: File Transformed successfully!!
